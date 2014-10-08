@@ -1,5 +1,4 @@
-import bvm.BrainfuckVirtualMachine;
-import bvm.Command;
+import bvm.*;
 
 import java.util.List;
 
