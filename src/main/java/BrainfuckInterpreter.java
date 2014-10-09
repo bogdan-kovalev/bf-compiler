@@ -7,7 +7,7 @@ import java.util.Stack;
  */
 public class BrainfuckInterpreter implements Interpreter {
 
-    private Stack<Integer> openedCyclesStartPoints = new Stack<>();
+    private final Stack<Integer> openedCyclesStartPoints = new Stack<>();
 
     public String interpret(String bfCode) {
         return interpret(new BrainfuckVirtualMachine(1000), bfCode);

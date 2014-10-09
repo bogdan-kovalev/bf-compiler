@@ -7,7 +7,7 @@ import java.util.List;
  * @author Bogdan Kovalev
  */
 public class Cycle implements Command {
-    private List<Command> commandsInCycle = new ArrayList<>();
+    private final List<Command> commandsInCycle = new ArrayList<>();
 
     public void addCommand(Command command) {
         commandsInCycle.add(command);

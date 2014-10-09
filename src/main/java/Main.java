@@ -2,7 +2,7 @@
  * @author Bogdan Kovalev
  */
 public class Main {
-    public static final String helloWorld = "++++++++++[>+++++++>++++++++++>+++>+<<<<-]>++.>+.+++++++." +
+    private static final String helloWorld = "++++++++++[>+++++++>++++++++++>+++>+<<<<-]>++.>+.+++++++." +
             ".+++.>++.<<+++++++++++++++.>.+++.------.--------.>+.>.";
 
     public static void main(String[] args) {

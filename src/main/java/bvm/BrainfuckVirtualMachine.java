@@ -4,9 +4,9 @@ package bvm;
  * @author Bogdan Kovalev
  */
 public class BrainfuckVirtualMachine {
-    private char[] memory;
+    private final char[] memory;
     private int pointer = 0;
-    private StringBuilder out = new StringBuilder();
+    private final StringBuilder out = new StringBuilder();
 
     public BrainfuckVirtualMachine(int memorySize) {
         this.memory = new char[memorySize];
@@ -40,10 +40,6 @@ public class BrainfuckVirtualMachine {
 
     public int getMemorySize() {
         return memory.length;
-    }
-
-    public void setCurrentMemoryCell(char value) {
-        memory[pointer] = value;
     }
 
     public String getOut() {
