@@ -2,11 +2,9 @@ import bvm.*;
 import org.junit.Test;
 
 import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Collections;
 import java.util.List;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
 /**
  * @author Bogdan Kovalev
@@ -33,7 +31,7 @@ public class Tests {
         testList.add(new DecrementCellCommand());
         testList.add(new Cycle());
 
-        String expected = String.valueOf((char)1);
+        String expected = String.valueOf((char) 1);
         String actual = new CommandsExecuter().run(testList);
 
         assertEquals(expected, actual);
@@ -54,7 +52,7 @@ public class Tests {
     public void testLoopsOnCompiler() {
         String testCode = "++++++++[>+++++++[>+<-]<-]>>.";
 
-        String expected = String.valueOf((char)56);
+        String expected = String.valueOf((char) 56);
         String actual = new CommandsExecuter().run(new BrainfuckCompiler().compile(testCode));
 
         assertEquals(expected, actual);
