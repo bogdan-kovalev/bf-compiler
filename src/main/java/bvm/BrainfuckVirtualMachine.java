@@ -1,11 +1,12 @@
 package bvm;
 
 /**
- * Created by B on 07.10.2014.
+ * @author Bogdan Kovalev
  */
 public class BrainfuckVirtualMachine {
     private char[] memory;
     private int pointer = 0;
+    private StringBuilder out = new StringBuilder();
 
     public BrainfuckVirtualMachine(int memorySize) {
         this.memory = new char[memorySize];
@@ -34,7 +35,7 @@ public class BrainfuckVirtualMachine {
     }
 
     public void printCurrentCell() {
-        System.out.print(getCurrentCell());
+        out.append(memory[pointer]);
     }
 
     public int getMemorySize() {
@@ -45,11 +46,8 @@ public class BrainfuckVirtualMachine {
         memory[pointer] = value;
     }
 
-    public int getPointer() {
-        return pointer;
+    public String getOut() {
+        return out.toString();
     }
 
-    public void setPointer(int pointer) {
-        this.pointer = pointer;
-    }
 }

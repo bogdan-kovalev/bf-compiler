@@ -3,16 +3,17 @@ import bvm.BrainfuckVirtualMachine;
 import java.util.Stack;
 
 /**
- * Created by B on 07.10.2014.
+ * @author Bogdan Kovalev
  */
-public class BrainfuckInterpreter {
+public class BrainfuckInterpreter implements Interpreter {
 
     private Stack<Integer> openedCyclesStartPoints = new Stack<>();
 
-    public void interpret(BrainfuckVirtualMachine bvm, String bfCode) {
-        System.out.println("interpret()");
-        System.out.println("Input string: " + bfCode);
-        System.out.println("Interpretation...");
+    public String interpret(String bfCode) {
+        return interpret(new BrainfuckVirtualMachine(1000), bfCode);
+    }
+
+    public String interpret(BrainfuckVirtualMachine bvm, String bfCode) {
         char[] chars = bfCode.toCharArray();
 
         for (int i = 0; i < chars.length; i++) {
@@ -50,9 +51,9 @@ public class BrainfuckInterpreter {
                     continue;
                 default:
                     System.out.println("Unknown symbol. Program stopped.\n");
-                    return;
+                    return bvm.getOut();
             }
         }
-        System.out.println();
+        return bvm.getOut();
     }
 }

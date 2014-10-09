@@ -1,10 +1,10 @@
 package bvm;
 
 /**
- * Created by B on 07.10.2014.
+ * @author Bogdan Kovalev
  */
 public class AddValueToCellCommand implements Command {
-    private int value;
+    private final int value;
 
     public AddValueToCellCommand(int value) {
         this.value = value;

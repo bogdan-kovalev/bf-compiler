@@ -1,7 +1,7 @@
 package bvm;
 
 /**
- * Created by B on 07.10.2014.
+ * @author Bogdan Kovalev
  */
 public interface Command {
     public void execute(BrainfuckVirtualMachine bvm);

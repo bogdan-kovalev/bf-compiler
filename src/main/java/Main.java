@@ -1,25 +1,18 @@
-import bvm.BrainfuckVirtualMachine;
-import bvm.Command;
-
-import java.util.List;
-
 /**
- * Created by B on 07.10.2014.
+ * @author Bogdan Kovalev
  */
 public class Main {
     public static final String helloWorld = "++++++++++[>+++++++>++++++++++>+++>+<<<<-]>++.>+.+++++++." +
             ".+++.>++.<<+++++++++++++++.>.+++.------.--------.>+.>.";
 
     public static void main(String[] args) {
-        BrainfuckInterpreter brainfuckInterpreter = new BrainfuckInterpreter();
-        BrainfuckCompiler brainfuckCompiler = new BrainfuckCompiler();
+        Interpreter interpreter = new BrainfuckInterpreter();
 
-        brainfuckInterpreter.interpret(new BrainfuckVirtualMachine(1000), helloWorld);
+        System.out.println(interpreter.interpret(helloWorld));
 
-        List<Command> compiled = brainfuckCompiler.compile(helloWorld);
-        List<Command> optimized = brainfuckCompiler.optimize(compiled);
+        Compiler compiler = new BrainfuckCompiler();
+        Executer executer = new CommandsExecuter();
 
-        CommandsExecuter.run(new BrainfuckVirtualMachine(1000), compiled);
-        CommandsExecuter.run(new BrainfuckVirtualMachine(1000), optimized);
+        System.out.println(executer.run(compiler.compile(helloWorld)));
     }
 }
